@@ -13,9 +13,9 @@ const app = express()
 app.use(express.static('public'));
 app.use(express.json())
 
-
+//fix this
 //gets a comment by id
-app.get("/api/notes:id", async (req, res) => {
+app.get("/api/notes/:id", async (req, res) => {
     const id = req.params.id
     let content;
 
@@ -42,23 +42,31 @@ app.post("/api/notes", async (req, res) => {
             text,
             id: uuid()
         };
-        const noteString = JSON.stringify(newNote);
+        // const noteString = JSON.stringify(newNote);
 
-        fs.appendFile(`./db/db.json`, noteString, (err) => {
-            err
-              ? console.error(err)
-              : console.log(`${newNote.title} has been written to JSON file`)
-          })
-        const response = {
-            status: 'success',
-            body: newNote,
-          };
-          console.log(response);
-          res.status(201).json(response)
+        fs.readFile(`./db/db.json`, "utf8"
+           
+            // err
+            //   ? console.error(err)
+            //   : console.log(`${newNote.title} has been written to JSON file`)
+          ).then((data) => {
 
+            console.log(data)
+            const oldData = JSON.parse(data)
+            oldData.push(newNote)
+            fs.writeFile(`./db/db.json`, JSON.stringify(oldData) )
+            const response = {
+                status: 'success',
+                body: newNote,
+              };
+              console.log(response);
+              res.status(201).json(response)
+    
+          }) 
+        
     } else {
         res.status(500).json('Error in posting review');
-    }
+}
     
 })
 

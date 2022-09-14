@@ -1,6 +1,4 @@
 [
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
+{"title":"note","text":"title","id":"338116bc-4465-403c-97bd-8b6f265dfc20"},
+{"title":"TODO","text":"I need to fix the get method to retrieve my JSON objects.","id":"7bb15ba6-feee-46b8-8988-67ad1d962a82"}
 ]

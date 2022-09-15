@@ -1,5 +1,7 @@
 const fs = require("fs/promises")
 let db = require("./db/db.json")
+
+const PORT = process.env.PORT||3000
 //makes api 
 const express = require("express")
 
@@ -73,5 +75,5 @@ app.post("/api/notes", async (req, res) => {
 })
 
 
-app.listen(3000, () => console.log("api server running"))
+app.listen(PORT, () => console.log("api server running"))
 

@@ -1,1 +1,7 @@
-[{"title":"this is a title","text":"this is a text"},{"title":"this is a title","text":"this is a text","id":"7d46e924-3369-4e0e-8bcd-be25657ddf52"},{"title":"this is a","text":"this is a text","id":"b44506c3-9df9-4528-8f86-d03fff317cef"},{"title":"this is a","text":"this is a text","id":"171f922e-f5cc-4bf4-a9c8-d9e78aff977e"},{"title":"note title","text":"text","id":"1d613c26-c730-48f4-885e-70c8e0749ceb"}]
+[
+  {
+    "title": "Welcome to Note Taker",
+    "text": "This web app can be used to write little notes. \nYou can save the notes to the server database,\nand remove notes that you no longer need!\n",
+    "id": "d2ae3bed-16da-465d-a414-c88acd716449"
+  }
+]

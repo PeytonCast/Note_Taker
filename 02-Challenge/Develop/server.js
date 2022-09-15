@@ -4,7 +4,7 @@ let db = require("./db/db.json")
 const express = require("express")
 
 //makes unique ID
-const { v4: uuid } = require("uuid")
+const uuid = require("./uuid")
 // const { response } = require("express")
 
 //rename express
@@ -36,7 +36,7 @@ app.delete("/api/notes/:id", function (req, res) {
             res.send(deletedNote)}//sends the response of what was deleted
             else res.status(404).send("not found")
     })
-    
+
 }
 )
 //posts a new note
